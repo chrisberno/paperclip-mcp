@@ -62,7 +62,7 @@ const companyParam = z.string().optional().describe("Company ID (omit for Onreb,
 
 const server = new McpServer({
   name: "paperclip",
-  version: "0.1.0",
+  version: "0.1.1",
 });
 
 // --- Tools ---
@@ -99,8 +99,8 @@ server.tool(
     agent_id: z.string().describe("Agent UUID"),
     company_id: companyParam,
   },
-  async ({ agent_id, company_id }) => {
-    const agent = await api(`/companies/${cid(company_id)}/agents/${agent_id}`);
+  async ({ agent_id }) => {
+    const agent = await api(`/agents/${agent_id}`);
     return {
       content: [{ type: "text", text: JSON.stringify(agent, null, 2) }],
     };
