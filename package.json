@@ -1,5 +1,5 @@
 {
-  "name": "paperclip-mcp",
+  "name": "@chrisberno/paperclip-mcp",
   "version": "0.1.0",
   "description": "MCP server for Paperclip COP — list/read/create/update agents and issues across companies",
   "type": "module",
